@@ -20,8 +20,8 @@ If you wanna chat, check [![Gitter chat](https://badges.gitter.im/AR-js/Lobby.pn
 
 # Try it on Mobile
 
-It works on all platforms. Android, IOS and window phone. It run **any browser with WebGL and WebRTC**.
-(for IOS, you need to update to ios11)
+It works on all platforms. Android, iOS and window phone. It run **any browser with WebGL and WebRTC**.
+(for iOS, you need to update to iOS11)
 
 To try on your phone is only 2 easy steps, check it out!
 
@@ -29,7 +29,7 @@ To try on your phone is only 2 easy steps, check it out!
 1. Open this [augmented reality webapps](https://jeromeetienne.github.io/AR.js/three.js/examples/mobile-performance.html) in your phone browser, and point it
 to your screen.
 
-**You are done!** It will open a webpage which read the phone webcam, localize a hiro marker and add 3d on top of it, as you can see below.
+**You are done!** It will open a web page which read the phone webcam, localize a hiro marker and add 3D model on top of it, as you can see below.
 
 ![screenshot](https://cloud.githubusercontent.com/assets/252962/23072106/73a0656c-f528-11e6-9fcd-3c900d1d47d3.jpg)
 
@@ -38,14 +38,14 @@ to your screen.
 So we shown it is now possible to do 60fps web-based augmented reality on a phone.
 This is great for sure but how did we get here ? **By standing on the shoulders of giants!**
 It is thanks to the hard work from others, that we can today reach this mythic 60fps AR.
-So i would like to thanks :
+So I would like to thanks :
 
 - **three.js** for being a great library to do 3d on the web.
 - **artoolkit**! years of development and experiences on doing augmented reality
 - **emscripten and asm.js**! thus we could compile artoolkit c into javascript
 - **chromium**! thanks for being so fast!
 
-Only thanks to all of them, i could do my part : Optimizing performance from 5fps on high-end
+Only thanks to all of them, I could do my part : Optimizing performance from 5fps on high-end
 phone, to 60fps on 2years old phone.
 
 After all this work done by a lot of people, we have a *web-based augmented reality solution fast enough for mobile*!
@@ -88,7 +88,7 @@ Other crazy ideas we’ve been working on include a [hole in the wall](https://t
 ![screen shot 2017-03-12 at 15 19 51](https://cloud.githubusercontent.com/assets/6317076/23833024/b2e045be-0737-11e7-9ef0-8e1ac9e49ba8.png)
 ![screen shot 2017-03-07 at 10 08 39](https://cloud.githubusercontent.com/assets/6317076/23833015/947f6abe-0737-11e7-9a0d-1ea919f6ffbe.png)
 
-# principles
+# Principles
 - "Shared #ar is a lot more real than solo #AR." - Augmented reality principle [tweet](https://twitter.com/jerome_etienne/status/847889867296124933)
 - "The marker must be a portal from where the virtual emerges." by @AndraConnect - #AR principles at dinner 😏 [tweet](https://twitter.com/jerome_etienne/status/842112692211056640)
 
