@@ -34,6 +34,22 @@ AFRAME.registerComponent('arjs-anchor', {
 			type: 'number',
 			default: 0.6,
 		},
+		smooth: {
+			type: 'boolean',
+			default: false,
+		},
+		smoothCount: {
+			type: 'number',
+			default: 5,
+		},
+		smoothTolerance: {
+			type: 'number',
+			default: 0.01,
+		},
+		smoothThreshold: {
+			type: 'number',
+			default: 2,
+		},
 	},
 	init: function () {
 		var _this = this
@@ -100,6 +116,11 @@ AFRAME.registerComponent('arjs-anchor', {
 			}else {
 				// console.assert( this.data.preset === '', 'illegal preset value '+this.data.preset)
 			}
+
+			markerParameters.smooth = _this.data.smooth;
+			markerParameters.smoothCount = _this.data.smoothCount;
+			markerParameters.smoothTolerance = _this.data.smoothTolerance;
+			markerParameters.smoothThreshold = _this.data.smoothThreshold;
 
 			//////////////////////////////////////////////////////////////////////////////
 			//		create arAnchor
@@ -177,10 +198,14 @@ AFRAME.registerPrimitive('a-anchor', AFRAME.utils.extendDeep({}, AFRAME.primitiv
 		'url': 'arjs-anchor.patternUrl',
 		'value': 'arjs-anchor.barcodeValue',
 		'preset': 'arjs-anchor.preset',
-		'minConfidence': 'arjs-anchor.minConfidence',
-		'markerhelpers': 'arjs-anchor.markerhelpers',
+		'min-confidence': 'arjs-anchor.minConfidence',
+		'marker-helpers': 'arjs-anchor.markerhelpers',
+		'smooth': 'arjs-anchor.smooth',
+		'smooth-count': 'arjs-anchor.smoothCount',
+		'smooth-tolerance': 'arjs-anchor.smoothTolerance',
+		'smooth-threshold': 'arjs-anchor.smoothThreshold',
 
-		'hit-testing-renderDebug': 'arjs-hit-testing.renderDebug',
+		'hit-testing-render-debug': 'arjs-hit-testing.renderDebug',
 		'hit-testing-enabled': 'arjs-hit-testing.enabled',
 	}
 }))
@@ -210,10 +235,14 @@ AFRAME.registerPrimitive('a-marker', AFRAME.utils.extendDeep({}, AFRAME.primitiv
 		'url': 'arjs-anchor.patternUrl',
 		'value': 'arjs-anchor.barcodeValue',
 		'preset': 'arjs-anchor.preset',
-		'minConfidence': 'arjs-anchor.minConfidence',
-		'markerhelpers': 'arjs-anchor.markerhelpers',
+		'min-confidence': 'arjs-anchor.minConfidence',
+		'marker-helpers': 'arjs-anchor.markerhelpers',
+		'smooth': 'arjs-anchor.smooth',
+		'smooth-count': 'arjs-anchor.smoothCount',
+		'smooth-tolerance': 'arjs-anchor.smoothTolerance',
+		'smooth-threshold': 'arjs-anchor.smoothThreshold',
 
-		'hit-testing-renderDebug': 'arjs-hit-testing.renderDebug',
+		'hit-testing-render-debug': 'arjs-hit-testing.renderDebug',
 		'hit-testing-enabled': 'arjs-hit-testing.enabled',
 	}
 }))
@@ -231,7 +260,7 @@ AFRAME.registerPrimitive('a-marker-camera', AFRAME.utils.extendDeep({}, AFRAME.p
 		'url': 'arjs-anchor.patternUrl',
 		'value': 'arjs-anchor.barcodeValue',
 		'preset': 'arjs-anchor.preset',
-		'minConfidence': 'arjs-anchor.minConfidence',
-		'markerhelpers': 'arjs-anchor.markerhelpers',
+		'min-confidence': 'arjs-anchor.minConfidence',
+		'marker-helpers': 'arjs-anchor.markerhelpers',
 	}
 }))

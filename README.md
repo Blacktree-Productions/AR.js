@@ -49,46 +49,59 @@ multiple independent markers at the same time, or [multiple markers acting as a 
 More details about markers:
 
 * [Artoolkit Open Doc](https://github.com/artoolkit/artoolkit-docs/tree/master/3_Marker_Training)
-* [Detailed Article about markers](https://medium.com/chialab-open-source/ar-js-the-simpliest-way-to-get-cross-browser-ar-on-the-web-8f670dd45462) by [@nicolocarpignoli](https://github.com/nicolocarpignoli)
+* [Detailed Article about markers](https://medium.com/@nicolcarpignoli/ar-js-the-simplest-way-to-get-cross-browser-augmented-reality-on-the-web-10cbc721debc) by [@nicolocarpignoli](https://twitter.com/nicolocarp)
+
+# Index
+* [Get Started](#Get-Started)
+* [Guides for Beginners](#Guides-for-beginners)
+* [Advanced Guides](#Advanced-Guides)
+* [Examples](#Examples)
+* [Augmented Website](#Augmented-Website)
+* [Tools](#Tools)
+* [Performance](#Performance)
+* [Status](#Status)
+* [Folders](#Folders)
+* [Browser Support](#Browser-Support)
+* [Licenses](#Licenses)
+
+⚠️ *Be aware that most recent features are currently released on `dev` branch.*
+
 
 #  Get Started
 
 ## Augmented reality for the web in less than 10 lines of html
+
+```html
+<!doctype HTML>
+<html>
+<script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.1/aframe/build/aframe-ar.js"></script>
+  <body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs>
+      <a-marker preset="hiro">
+          <a-box position='0 0.5 0' material='color: yellow;'></a-box>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
+```
+
+See on [codepen](https://codepen.io/nicolocarpignoli/pen/vMBgob)
 
 A-Frame magic :) All details are explained in this super post
 ["Augmented Reality in 10 Lines of HTML - AR.js with a-frame magic"](https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf)
 by
 [@AndraConnect](https://twitter.com/AndraConnect).
 
-```html
-<!doctype HTML>
-<html>
-<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
-<script src="https://raw.githack.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
-  <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs>
-  	<a-marker preset="hiro">
-            <a-box position='0 0.5 0' material='color: black;'></a-box>
-  	</a-marker>
-  	<a-entity camera></a-entity>
-    </a-scene>
-  </body>
-</html>
-```
-
-See on [codepen](https://codepen.io/jeromeetienne/pen/mRqqzb) or [bl.ocks.org](https://bl.ocks.org/jeromeetienne/feeb69257803e69f18dc3ea5f4fc6d71)
 
 ## Guides for beginners
 We started a [AR.js blog](https://medium.com/arjs), thus we can write about
 all the crazy ideas related to AR.js.
 
+- [AR.js introduction and insight on markers](https://medium.com/@nicolcarpignoli/ar-js-the-simplest-way-to-get-cross-browser-augmented-reality-on-the-web-10cbc721debc)
 - [Details about 3D models that can be used with AR.js](https://medium.com/@akashkuttappa/using-3d-models-with-ar-js-and-a-frame-84d462efe498)
-- [AR.js introduction and insight on patterns](https://medium.com/chialab-open-source/ar-js-the-simpliest-way-to-get-cross-browser-ar-on-the-web-8f670dd45462)
 - ["WebVR for Augmented Reality - Using WebVR to write cross-platform AR applications"](https://medium.com/arjs/webvr-for-augmented-reality-f1e69a505902)
-  by [@jerome_etienne](https://twitter.com/jerome_etienne)
-- ["Augmenting The Web Page - Bringing augmenting reality to normal web pages"](https://medium.com/arjs/augmenting-the-web-page-e893f2d199b8)
-  by [@jerome_etienne](https://twitter.com/jerome_etienne)
-- ["Server Rendering for Augmented Reality - Cloud Rendering with Web Standards"](https://medium.com/arjs/server-rendering-for-augmented-reality-2de0a71aae04)
   by [@jerome_etienne](https://twitter.com/jerome_etienne)
 - ["AR-Code:a Fast Path to Augmented Reality - From QR Code to AR.js content"](https://medium.com/arjs/ar-code-a-fast-path-to-augmented-reality-60e51be3cbdf)
   by [@jerome_etienne](https://twitter.com/jerome_etienne)
@@ -100,27 +113,37 @@ Very great! the perfect step if you want to start writing AR application today.
 
 ## Advanced guides
 
+- [How to deliver AR.js only with a QR Code](https://medium.com/@nicolcarpignoli/how-to-deliver-ar-on-the-web-only-with-a-qr-code-139bb90e82f1)
+- [How to handle click with AR.js](https://medium.com/@nicolcarpignoli/how-to-handle-click-events-on-ar-js-f397ea5994d)
+- [10 tips to enhance your AR.js app performances](https://medium.com/@nicolcarpignoli/10-tips-to-enhance-your-ar-js-app-8b44c6faffca)
 - ["Area Learning with Multi-Markers in AR.js - For a Larger & More Stable Augmented Reality"](https://medium.com/arjs/area-learning-with-multi-markers-in-ar-js-1ff03a2f9fbe)
   by [@AndraConnect](https://twitter.com/AndraConnect)
 - Great post about [WebAR for designer](http://www.nexusinteractivearts.com/webar/)
 by [nexus interactive arts](http://www.nexusinteractivearts.com/)
-- [How to deliver AR.js only with a QR Code](https://medium.com/@nicolcarpignoli/how-to-deliver-ar-on-the-web-only-with-a-qr-code-613874cfc537)
-- [How to handle click with AR.js](https://medium.com/chialab-open-source/how-to-handle-click-events-on-ar-js-58fcacb77c4)
 
 
 # Examples
 
 Try to get inspired by this great works:
 
-- [Full set of AR.js examples](https://github.com/stemkoski/AR-Examples) from [@stemkoski](https://github.com/stemkoski)
 - [Examples from official AR.js doc](https://jeromeetienne.github.io/AR.js-docs/misc/EXAMPLES.html)
 
+# Related Projects
+- [Examples inspired from AR.js - not AR.js based](https://github.com/stemkoski/AR-Examples) from [@stemkoski](https://github.com/stemkoski)
+- [AR-gif](https://github.com/rodrigocam/ar-gif):
+   Easy to use web components to do web augmented reality. Currently supporting gifs, but open for contributions to
+   add 3d objects, videos and so on.
+
 ## Augmented Website
+
 [Seminal post](https://medium.com/arjs/augmenting-the-web-page-e893f2d199b8) explaining the concept.
 The service is available [webxr.io/augmented-website](https://webxr.io/augmented-website/)
 
 [![Augmented Website](https://user-images.githubusercontent.com/252962/27472386-0d11e59a-57f3-11e7-9fa5-34332c5484f7.png)](https://webxr.io/augmented-website/)
 
+# Community
+- AR.js on gitter: https://gitter.im/AR-js/Lobby
+- Trello board for ongoing work: https://trello.com/b/63F7JlvD/arjs
 
 # Tools
 
