@@ -12,7 +12,7 @@ describe('AR.js Performance', function() {
 		browser.url(pageURL)
 		
 		var averageFPS = measureFPS(browser, 2000)
-		console.log('measured fps at ', averageFPS.toFixed(1) )
+		console.log('averageFPS ', averageFPS )
 		
 		// TODO what should i do with that ? 
 		// - should i log it somewhere

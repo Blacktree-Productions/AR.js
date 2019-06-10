@@ -3,15 +3,15 @@
 <head>
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        
+
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css"  media="screen,projection"/>
-        
+
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <!-- https://davidshimjs.github.io/qrcodejs/ -->
-        <script src='https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js'></script>
+        <script src='https://raw.githack.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js'></script>
 
         <!-- Include pdfMake - http://pdfmake.org/ -->
  	<script src='vendor/pdfMake/pdfmake.min.js'></script>
@@ -34,7 +34,7 @@
                         <input type="checkbox" id="saveInUrl" />
                         <label for="saveInUrl">Save in url</label>
                         <input type="checkbox" id="hideUiEnabled" type="hidden"/>
-                </div>                
+                </div>
 
 
                 <div class="input-field col s4 offset-s4">
@@ -43,25 +43,25 @@
                                 Info
                         </a>
                         <a onclick='generatePdf()' class="waves-effect waves-light btn-large" title='Generate a PDF instruction page'>Pdf</a>
-                </div>                
+                </div>
 
         </div>
         <div class="row">
                 <div class="col s2">
                         <a class="waves-effect waves-light btn" onclick='showUI()' id='btnShowUI' style='display:none;'><i class="material-icons right">reorder</i>Show</a>
-                </div>                
+                </div>
                 <div class="col s10"></div>
                 <div class="col s12">
                         <div class="valign-wrapper">
                                 <div class="valign center" style="width: 100%;" id='arcode-container' ></div>
                         </div>
-                </div>                
+                </div>
         </div>
-        
+
 </div>
 
 
-        
+
         <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
@@ -94,16 +94,16 @@ document.querySelector('#saveInUrl').addEventListener('change', updateARCode)
 
 function generatePdf(){
         console.log('generate PDF')
-        
+
         var urlQrCode = document.querySelector('#urlQrCode').value
-        
+
         var docDefinition = {
                 header: [
                         {
                                 text: 'AR.js by @jerome_etienne - https://github.com/jeromeetienne/ar.js',
                                 margin: [0, 0],
                                 alignment: 'center',
-                        },                        
+                        },
                 ],
                 content: [
                         {
@@ -112,7 +112,7 @@ function generatePdf(){
                                 alignment: 'center',
                         },
                         {
-                                text: [                                        
+                                text: [
                                         {
                                                 text: '\nAR-CODE ',
                         			fontSize: 30,
@@ -162,7 +162,7 @@ function generatePdf(){
                                         'of the marker and display 3d content on top of it. ',
                                 ],
                                 margin: [0, 10, 0 , 30],
-        		},        
+        		},
                         {
                                 text: 'Step 3 - Point the Phone at the Hiro Marker',
         			bold: true,
@@ -172,10 +172,10 @@ function generatePdf(){
                                 text: [
                                         'You are ',
                                         { text: 'DONE', bold: true, },
-                                        '! Enjoy the Augmented Reality :)',                                        
+                                        '! Enjoy the Augmented Reality :)',
                                 ],
                                 margin: [0, 10, 0 , 30],
-        		},        
+        		},
                 ],
         }
         pdfMake.createPdf(docDefinition).open();
@@ -184,7 +184,7 @@ function generatePdf(){
 
 
 //////////////////////////////////////////////////////////////////////////////
-//                build canvas 
+//                build canvas
 //////////////////////////////////////////////////////////////////////////////
 var canvas = document.createElement('canvas');
 document.querySelector('#arcode-container').appendChild(canvas)
@@ -198,7 +198,7 @@ var context = canvas.getContext('2d')
 var hiroImage = new Image;
 hiroImage.onload = function() {
         console.log('hiro image loaded')
-        
+
         if( location.hash.substr(1) !== '' ){
                 var parameters = JSON.parse(decodeURIComponent(location.hash.substr(1)))
                 document.querySelector('#urlQrCode').value = parameters.urlQrCode
@@ -221,7 +221,7 @@ function updateARCode(){
                 urlQrCode : urlQrCode,
                 hideUiEnabled: hideUiEnabled,
         }
-        
+
         // generate the ar-code canvas
         generateArCodeCanvas(canvas, urlQrCode, function onReady(){
                 console.log('ar-code generated for', urlQrCode)
@@ -232,9 +232,9 @@ function updateARCode(){
                 document.querySelector('#btnShowUI').style.display = 'block'
         }else{
                 document.querySelector('#row-ui').style.display = 'block'
-                document.querySelector('#btnShowUI').style.display = 'none'                
+                document.querySelector('#btnShowUI').style.display = 'none'
         }
-        
+
         //////////////////////////////////////////////////////////////////////////////
         //                update location.hash if suitable
         //////////////////////////////////////////////////////////////////////////////
@@ -255,14 +255,14 @@ function updateARCode(){
  */
 function generateArCodeCanvas(canvas, text, onLoad){
         var context = canvas.getContext('2d')
-        
+
         context.drawImage(hiroImage, 0, 0, canvas.width, canvas.height);
 
         generateQrCodeImage(text, function onLoaded(qrCodeImage){
                 console.log('qrcode generated')
-                context.drawImage(qrCodeImage,canvas.width*0.50,canvas.height*0.30,canvas.width*0.20, canvas.height*0.20);      
-                
-                onLoad && onLoad()          
+                context.drawImage(qrCodeImage,canvas.width*0.50,canvas.height*0.30,canvas.width*0.20, canvas.height*0.20);
+
+                onLoad && onLoad()
         })
 }
 
@@ -285,7 +285,7 @@ function generateQrCodeImage(text, onLoaded){
         qrCodeImage.addEventListener('load', function(){
                 onLoaded(qrCodeImage)
         })
-        
+
 }
-                
+
 </script></body></html>

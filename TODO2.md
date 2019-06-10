@@ -1,7 +1,8 @@
 # reorganize the repo
 - DONE rename EasyARjs into PortableARjs 
 - DONE remove webvr-polyfill
-- DONE merge to master
+
+- merge to master
 
 - in demos/ and experiments/ avoid to have .html directly, move each experiments in its own folders
 - make a nice examples of face tracking
